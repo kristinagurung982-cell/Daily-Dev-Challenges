@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import WeatherWidget from './components/WeatherWidget';
+import PomodoroTimer from './components/PomodoroTimer';
+
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -59,14 +61,18 @@ function App() {
           {/* Weather Widget */}
           <WeatherWidget />
           
+          {/* Pomodoro Timer Widget */}
+          <PomodoroTimer />
+          
           {/* Metric Cards placeholders */}
-          {[1, 2].map(i => (
+          {[1].map(i => (
              <div key={i} className="glass-panel" style={{ padding: '2rem' }}>
                <h3 style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Metric {i}</h3>
                <p style={{ fontSize: '2rem', fontWeight: 700, marginTop: '0.5rem' }}>{(Math.random() * 100).toFixed(1)}k</p>
              </div>
           ))}
         </section>
+
       </main>
     </div>
   );
